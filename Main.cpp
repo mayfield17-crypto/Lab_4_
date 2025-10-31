@@ -6,15 +6,17 @@ Lab 4: Temperature Bar Chart
 description: This program reads temperature data from a file and generates a bar chart
 ******************/
 
+	
 #include <iostream>
 #include <fstream> 
 #include <string>
 #include <cmath> // For abs function
 #include <iomanip> // For setw and setprecision
 
+
 using namespace std;
 
-// Constants for temperature range and temperature bar chart scale
+// Constants  temperature range and temperature bar chart scale
 const int MIN_TEMP = -30; // Min temperature
 const int MAX_TEMP = 120; // Max temperature
 const int DEG_PER_STAR = 3; // Each star represents 3 degrees Fahrenheit
@@ -39,22 +41,22 @@ void printTemperatureBarLine(int temp)
 
 int main()
 {
-	// Open and open the file with temperature data
+	// Open the file with temperature data
 	::ifstream inFile;
 	inFile.open("HourTemp.dat");
 
-	// Check if the file opened successfully
+	// Check  the file opened successfully
 	if (!inFile)
 	{
 		cout << "Error opening file HourTemp.dat" << endl;
 		return 1; //Exit with error code
 	}
 
-	printHeader(); //Print the header for the bar chart
+	printHeader(); //Print header for the bar chart
 
 	int temp;
 
-	// Read temperatures from the file and print the corresponding bar chart lines
+	// Read temperatures from  file and print the corresponding bar chart lines
 	while (inFile >> temp)
 	{
 		if (temp < -30 || temp > 120) // Check for any out of range temperatures
@@ -63,7 +65,7 @@ int main()
 		}
 		else
 		{
-			printTemperatureBarLine(temp); //print the bar line
+			printTemperatureBarLine(temp); //print   bar line
 		}
 	}
 	inFile.close();
